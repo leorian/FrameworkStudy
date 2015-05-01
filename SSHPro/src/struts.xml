@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFacotoy" value="spring"></constant>
+	<package name="judge" extends="struts-default,json-default">
+		<action name="stuIdJudge" class="StuIdJudgeAction">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<package name="main" extends="struts-default">
+		<action name="stuInfoAdd" class="StuInfoAddAction">
+			<result>/stuInfoAdd.jsp</result>
+		</action>
+		<action name="stuInfoAddSuc" class="StuInfoAddSucAction">
+			<result type="redirect">/index.jsp</result>
+		</action>
+		<action name="stuInfoModify" class="StuInfoModifyAction">
+			<result>/stuInfoModify.jsp</result>
+		</action>
+		<action name="stuInfoModifySuc" class="StuInfoModifySucAction">
+			<result type="redirect">/index.jsp</result>
+		</action>
+		<action name="stuInfoDel" class="StuInfoDelAction">
+			<result type="redirect">/index.jsp</result>
+		</action>
+	</package>
+</struts>    
